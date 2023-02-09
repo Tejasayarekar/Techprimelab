@@ -1,0 +1,30 @@
+  
+  .container {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 350px;
+    background: whitesmoke;
+    border-radius: 10px;
+  }
+  .container h1 {
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid black;    
+  }
+  
+  .form__label , .form__input {
+    font-size: 12px;
+  }
+  .container form{
+    padding: 0 20px 10px;
+  }
+
+  button[type="submit"]{
+    width: 50%;
+    height: 50px;
+    border: 1px solid black;
+    align-content: center;
+    font-size: 18px;
+  }

@@ -1,0 +1,60 @@
+<br>
+<div class="row">
+    <div class="row">
+        <div class="col-6">
+            <span class="badge rounded-pill bg-info text-dark" id='tot_rec' style="margin: 2px;">Total Record {{
+                data.tb_length}}</span>
+        </div>
+
+        <div class="col-5 text-right">
+            <input type="text" id='search' placeholder="search data" class="col-10 form-control form-control-sm">
+        </div>
+
+    </div>
+</div>
+<br>
+
+<div class="row">
+    <table class="table_rc " class="border" id="tb_data">
+        <tr>
+            <th>No</th>
+            <th>Projectname</th>
+            <th>Reason</th>
+            <th>Type</th>
+            <th>Division</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Department</th>
+            <th>Options</th>
+        </tr>
+        <tr *ngFor="let x of data.data_list | paginate: { itemsPerPage: 10, currentPage: p } let i=index"
+            class='row_data'>
+            <td>{{ i+ 1 }}</td>
+            <td>{{ x.projectname }} a </td>
+            <td>{{ x.reason }} a</td>
+            <td>{{ x.type }} a</td>
+            <td>{{ x.division }} a</td>
+            <td>{{ x.category }} a</td>
+            <td>{{ x.priority }} a</td>
+            <td>{{ x.department }} a</td>
+            <td>
+                <a (click)="start(x.lid)"><button class='btn btn-warning btn-sm'><i class="fa fa-edit"></i></button>
+                </a>
+                <a (click)="close(x.lid)"> <button class='btn btn-danger btn-sm'><i
+                            class="fa fa-trash"></i></button></a>
+                <a (click)="cancel(x.lid)"><button class='btn btn-warning btn-sm'><i class="fa fa-edit"></i></button>
+                </a>
+            </td>
+
+        </tr>
+    </table>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-6 text-left">
+        <pagination-controls class='text-left' (pageChange)="p = $event"></pagination-controls>
+    </div>
+
+
+</div>

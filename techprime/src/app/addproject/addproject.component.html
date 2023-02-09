@@ -1,0 +1,152 @@
+<b>Create Project</b>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <label>Project name &nbsp;</label>
+            <input type="text" placeholder="enter project name" id="">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+
+        <div class="col-3">
+            <label>Reason</label><br>
+            <select class='form-select'>
+                <option>Select</option>
+                <option *ngFor="let x of data" value="{{x.id}}">{{x.name}}</option>
+            </select>
+        </div>
+
+        <div class="col-3">
+            <label>Type</label><br>
+            <select class='form-select'>
+                <option>Select</option>
+                <option value="">Internal</option>
+                <option value="">External</option>
+                <option value="">Vendor</option>
+            </select>
+        </div>
+
+        <div class="col-3">
+            <label>Division</label><br>
+            <select class='form-select'>
+                <option>Select</option>
+                <option value="">Filters</option>
+                <option value="">Pumps</option>
+                <option value="">Glass</option>
+                <option value="">Compressor</option>
+                <option value="">Water Heater</option>
+            </select>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+
+        <div class="col-3">
+            <label>Category</label><br>
+            <select class='form-select'>
+                <option>Select</option>
+                <option value="">Quality A</option>
+                <option value="">Quality B</option>
+                <option value="">Quality C</option>
+                <option value="">Quality D</option>
+            </select>
+        </div>
+
+        <div class="col-3">
+            <label>Priority</label><br>
+            <select class='form-select'>
+                <option>Select</option>
+                <option value="">High</option>
+                <option value="">Medium</option>
+                <option value="">Low</option>
+            </select>
+        </div>
+
+        <div class="col-3">
+            <label>Department</label><br>
+            <select class='form-select'>
+                <option>Select</option>
+                <option value="">Finance</option>
+                <option value="">Quality</option>
+                <option value="">Maintenance</option>
+                <option value="">Stores</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <label>Location</label><br>
+            <select class='form-select'>
+                <option>Select</option>
+                <option value="">Mumbai</option>
+                <option value="">Pune</option>
+                <option value="">Delhi</option>
+                <option value="">Chennai</option>
+            </select>
+        </div>
+        
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-3">
+            <label>Start Date as per business plan</label> 
+            <div class="mb-3">
+                <input type="date" id="from_date" class="form-control form-control-date" placeholder="From Date"
+                [(ngModel)]="data.from_date" name="from_date">
+            </div>
+        </div>
+        <div class="col-3">
+            <label>End Date as per business &nbsp; plan</label> 
+            <div class="mb-3">
+                <input type="date" id="to_date" class="form-control form-control-date" placeholder="To Date"
+                    [(ngModel)]="data.to_date" name="to_date">
+            </div>
+        </div>
+        <div class="form-group col-3">
+            <label>Status</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" (change)="status_change('active')"
+                name="flexRadioDefault" id="flexRadioDefault1" checked>
+              <label class="form-check-label" for="flexRadioDefault1">
+                Resistered
+              </label>
+            </div>
+            <div class="form-check ">
+              <input class="form-check-input" type="radio" (change)="status_change('deactive')"
+                name="flexRadioDefault" id="flexRadioDefault2" disabled>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Running
+              </label>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input" type="radio" (change)="status_change('Closed')"
+                    name="flexRadioDefault" id="flexRadioDefault2" disabled>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Closed
+                </label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12 text-center">
+        <button type='submit' class='tab btn btn-primary' id='add_answer' (click)="add()">
+            <i class="fa fa-plus" aria-hidden="true"></i> Add Project</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
